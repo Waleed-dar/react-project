@@ -3,7 +3,7 @@ import logo from './logo.jpg'
 export default function Navbar() {
   return (
     <div>
-      <nav className="bg-gray-600 sm:h-10 md:h-18 flex items-center justify-between px-4 sm:px-8">
+      <nav className="bg-gray-600 sm:h-10 md:h-18 flex items-center justify-between px-4 sm:px-8 sticky">
   <img
     className="w-18 h-8 xs:w-4 xs:h-4  sm:w-10 sm:h-9 md:w-12 md:h-8 pt-1"
     src={logo}
