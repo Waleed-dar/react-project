@@ -16,7 +16,7 @@ export default function Sidebar() {
     }
   return (
    <div>
-  <nav className={`bg-gray-300  fixed h-full md:w-36 rounded-lg ${sidebar ? "w-36" : "w-20"}`}>
+  <nav className={`bg-gray-300 sm:w-20 fixed h-full rounded-lg ${sidebar ? "w-36  " : "w-20"}`}>
     <ul className="mt-2">
       <li className="bg-gray-400 hover:bg-slate-100 rounded-md">
         <button className="flex items-center">
@@ -25,14 +25,14 @@ export default function Sidebar() {
             src={homeicon}
             alt="home image"
           />
-          <div className={`sm:hidden md:block md:ml-1 ${sidebar ? "block" : "hidden" }`} >All Countries</div>
+          <div className={`sm:hidden md:ml-1 md:block`} >All Countries</div>
         </button>
       </li>
 
       <li className="bg-gray-400  mt-4  hover:bg-slate-100 rounded-md">
         <button className="flex items-center">
           <img className="sm:h-4 px-12 md:px-0 md:ml-1 md:pl-1 " src={detail} />
-          <div className="sm:hidden md:block md:ml-2">Country Details</div>
+          <div className={`sm:hidden md:block md:ml-2 `}>Country Details</div>
         </button>
       </li>
 
