@@ -4,6 +4,7 @@ import Search from "./Images/search.png";
 import Detail from "./Images/detail-icon.png";
 import BarOpener from "./Images/bar-opener.png";
 import Profile from "./Images/profile logo.png";
+import { Option1, Option2, Option3, Option4 } from "./ConstantData";
 
 export default function Sidebar() {
   const [Sidebar, setSidebar] = useState(true);
@@ -23,15 +24,15 @@ export default function Sidebar() {
           <button className="" onClick={ToggleSidebar}>
             <img className="sm:h-5 hover:bg-slate-100" src={BarOpener} />
           </button>
-
+          
           <li
             className={` hover:bg-slate-100 rounded-md ${
-              CurrentSelectedItem === "All Countries"
+              CurrentSelectedItem === Option1
                 ? "bg-gray-100"
                 : "bg-gray-400"
             }`}
             onClick={() => {
-              setCurrentSelectedItem("All Countries");
+              setCurrentSelectedItem(Option1);
             }}
           >
             <button className="flex items-center">
@@ -55,11 +56,11 @@ export default function Sidebar() {
 
           <li
             className={`bg-gray-400  mt-2  hover:bg-slate-100 rounded-md } ${
-              CurrentSelectedItem === "CountryDetails"
+              CurrentSelectedItem === Option2
                 ? "bg-gray-100"
                 : "bg-gray-400"
             }`}
-            onClick={() => setCurrentSelectedItem("CountryDetails")}
+            onClick={() => setCurrentSelectedItem(Option2)}
           >
             <button className="flex items-center">
               <img
@@ -80,11 +81,11 @@ export default function Sidebar() {
 
           <li
             className={`bg-gray-400 mt-2  hover:bg-slate-100 rounded-md ${
-              CurrentSelectedItem === "FindNeighbours"
+              CurrentSelectedItem === Option3
                 ? "bg-gray-100"
                 : "bg-gray-400"
             }`}
-            onClick={() => setCurrentSelectedItem("FindNeighbours")}
+            onClick={() => setCurrentSelectedItem(Option3)}
           >
             <button className="flex items-center">
               <img
@@ -103,11 +104,11 @@ export default function Sidebar() {
 
           <li
             className={`bg-gray-400 mt-2  hover:bg-slate-100 rounded-md ${
-              CurrentSelectedItem === "PersonalInformation"
+              CurrentSelectedItem === Option4
                 ? "bg-gray-100"
                 : "bg-gray-400"
             }`}
-            onClick={() => setCurrentSelectedItem("PersonalInformation")}
+            onClick={() => setCurrentSelectedItem(Option4)}
           >
             <button className="flex items-center">
               <img
