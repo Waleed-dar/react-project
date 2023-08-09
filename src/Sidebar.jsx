@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import {React, useState } from "react";
 import homeicon from "./Images/home-icon.png";
 import search from "./Images/search.png";
 import detail from "./Images/detail-icon.png";
@@ -9,7 +9,7 @@ export default function Sidebar() {
   const [sidebar, setsidebar] = useState(true);
   const [colour, setcolour] = useState(`bg-gray-400`);
   const [currentSelectedItem, setCurrentSelectedItem] = useState(null);
-  
+
   const controlsidebar = () => {
     setsidebar(!sidebar);
   };
