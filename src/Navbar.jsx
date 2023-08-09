@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './logo.jpg'
+import logo from './Images/logo.jpg'
 export default function Navbar() {
   return (
     <div>
@@ -10,9 +10,9 @@ export default function Navbar() {
     alt="Logo"
   />
   <ul className="text-white xs:space-x-3 xs:text-xs sm:space-x-5 md:space-x-6 lg:space-x-8 flex justify-end">
-    <li className=' hover:text-gray-900'>Home</li>
-    <li className=' hover:text-gray-900'>Services</li>
-    <li className=' hover:text-gray-900'>Contact US</li>
+    <li className=' hover:text-gray-900'><a href=''> Home</a></li>
+    <li className=' hover:text-gray-900'><a href=''>Services</a></li>
+    <li className=' hover:text-gray-900'><a href=''>Contact US</a></li>
     <li className=' hover:text-gray-900'>
       <div className="w-7 h-5 bg-blue-300 rounded-full px-2  ">
         <span className="">A</span>
