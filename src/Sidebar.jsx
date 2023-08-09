@@ -1,57 +1,51 @@
 import {React, useState } from "react";
-import homeicon from "./Images/home-icon.png";
-import search from "./Images/search.png";
-import detail from "./Images/detail-icon.png";
-import baropener from "./Images/bar-opener.png";
-import profile from "./Images/profile logo.png";
+import HomeIcon from "./Images/Home-icon.png";
+import Search from "./Images/search.png";
+import Detail from "./Images/detail-icon.png";
+import BarOpener from "./Images/bar-opener.png";
+import Profile from "./Images/profile logo.png";
 
 export default function Sidebar() {
-  const [sidebar, setsidebar] = useState(true);
-  const [colour, setcolour] = useState(`bg-gray-400`);
-  const [currentSelectedItem, setCurrentSelectedItem] = useState(null);
+  const [Sidebar, setSidebar] = useState(true);
+  const [CurrentSelectedItem, setCurrentSelectedItem] = useState(null);
 
-  const controlsidebar = () => {
-    setsidebar(!sidebar);
+  const ToggleSidebar = () => {
+    setSidebar(!Sidebar);
   };
-  const changecolour = () => {
-    setcolour("bg-gray-600");
-  };
-
   return (
     <div>
       <nav
         className={`bg-gray-300 fixed h-full rounded-lg ${
-          sidebar ? "w-36 sm:w-20 md:w-36 duration-500" : "w-20 duration-500"
+          Sidebar ? "w-36 sm:w-20 md:w-36 duration-500" : "w-20 duration-500"
         }`}
       >
         <ul className="mt-2">
-          <button className="" onClick={controlsidebar}>
-            <img className="sm:h-5 hover:bg-slate-100" src={baropener} />
+          <button className="" onClick={ToggleSidebar}>
+            <img className="sm:h-5 hover:bg-slate-100" src={BarOpener} />
           </button>
 
           <li
             className={` hover:bg-slate-100 rounded-md ${
-              currentSelectedItem == "All Countries"
+              CurrentSelectedItem === "All Countries"
                 ? "bg-gray-100"
                 : "bg-gray-400"
             }`}
             onClick={() => {
               setCurrentSelectedItem("All Countries");
-              console.log(currentSelectedItem);
             }}
           >
             <button className="flex items-center">
               <img
                 className={`sm:h-4 sm:px-8 ${
-                  sidebar ? "md:px-0 md:pl-2 " : "md:px-8"
+                  Sidebar ? "md:px-0 md:pl-2 " : "md:px-8"
                 }`}
-                src={homeicon}
+                src={HomeIcon}
                 alt="home image"
               />
 
               <div
                 className={`${
-                  sidebar ? "block sm:hidden md:block md:pl-2" : "hidden"
+                  Sidebar ? "block sm:hidden md:block md:pl-2" : "hidden"
                 }`}
               >
                 All Countries
@@ -61,7 +55,7 @@ export default function Sidebar() {
 
           <li
             className={`bg-gray-400  mt-2  hover:bg-slate-100 rounded-md } ${
-              currentSelectedItem == "CountryDetails"
+              CurrentSelectedItem === "CountryDetails"
                 ? "bg-gray-100"
                 : "bg-gray-400"
             }`}
@@ -70,13 +64,13 @@ export default function Sidebar() {
             <button className="flex items-center">
               <img
                 className={`sm:h-4 sm:px-8 ${
-                  sidebar ? " md:px-0 md:ml-1 md:pl-1" : "md:px-8"
+                  Sidebar ? " md:px-0 md:ml-1 md:pl-1" : "md:px-8"
                 } `}
-                src={detail}
+                src={Detail}
               />
               <div
                 className={`sm:hidden ${
-                  sidebar ? "block md:block md:ml-2" : "hidden"
+                  Sidebar ? "block md:block md:ml-2" : "hidden"
                 }`}
               >
                 Country Details
@@ -86,7 +80,7 @@ export default function Sidebar() {
 
           <li
             className={`bg-gray-400 mt-2  hover:bg-slate-100 rounded-md ${
-              currentSelectedItem == "FindNeighbours"
+              CurrentSelectedItem === "FindNeighbours"
                 ? "bg-gray-100"
                 : "bg-gray-400"
             }`}
@@ -94,12 +88,12 @@ export default function Sidebar() {
           >
             <button className="flex items-center">
               <img
-                className={`sm:h-7 sm:px-7 ${sidebar ? "md:px-0" : "md:px-7"}`}
-                src={search}
+                className={`sm:h-7 sm:px-7 ${Sidebar ? "md:px-0" : "md:px-7"}`}
+                src={Search}
               />
               <div
                 className={`sm:hidden ${
-                  sidebar ? "md:block md:mr-2" : "hidden"
+                  Sidebar ? "md:block md:mr-2" : "hidden"
                 }`}
               >
                 FindNeighbours
@@ -109,7 +103,7 @@ export default function Sidebar() {
 
           <li
             className={`bg-gray-400 mt-2  hover:bg-slate-100 rounded-md ${
-              currentSelectedItem == "PersonalInformation"
+              CurrentSelectedItem === "PersonalInformation"
                 ? "bg-gray-100"
                 : "bg-gray-400"
             }`}
@@ -117,12 +111,12 @@ export default function Sidebar() {
           >
             <button className="flex items-center">
               <img
-                className={`sm:h-7 sm:px-7 ${sidebar ? "md:px-0" : "md:px-7"}`}
-                src={profile}
+                className={`sm:h-7 sm:px-7 ${Sidebar ? "md:px-0" : "md:px-7"}`}
+                src={Profile}
               />
               <div
                 className={`sm:hidden ${
-                  sidebar ? "md:block md:mr-2" : "hidden"
+                  Sidebar ? "md:block md:mr-2" : "hidden"
                 }`}
               >
                 Profile
