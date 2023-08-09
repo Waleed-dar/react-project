@@ -9,10 +9,7 @@ export default function Sidebar() {
   const [sidebar, setsidebar] = useState(true);
   const [colour, setcolour] = useState(`bg-gray-400`);
   const [currentSelectedItem, setCurrentSelectedItem] = useState(null);
-  /* useEffect(()=>
-    {
-    },[currentSelectedItem]);
-*/
+  
   const controlsidebar = () => {
     setsidebar(!sidebar);
   };
