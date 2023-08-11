@@ -1,5 +1,5 @@
 import {React, useState } from "react";
-import HomeIcon from "./Images/Home-icon.png";
+import HomeIcon from "./Images/home-icon.png";
 import Search from "./Images/search.png";
 import Detail from "./Images/detail-icon.png";
 import BarOpener from "./Images/bar-opener.png";
