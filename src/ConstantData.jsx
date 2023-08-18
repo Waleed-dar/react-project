@@ -27,8 +27,8 @@ export const filterOptions = [
       },
       {
         key: '5',
-        label: 'North_America',
-        value: 'North_America',
+        label: 'North America',
+        value: 'North America',
       },
       {
         key: '6',
@@ -37,7 +37,7 @@ export const filterOptions = [
       },
       {
         key: '7',
-        label: 'South_America',
-        value: 'South_America',
+        label: 'South America',
+        value: 'South America',
       },
   ];

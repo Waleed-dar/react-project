@@ -5,12 +5,12 @@ import { filterOptions } from "./ConstantData";
 import Filter from "./Filter";
 
 export default function AllCountries() {
-  const FetchCountriesData = async () => {
+  const fetchCountriesData = async () => {
     try {
-      const Url = "https://restcountries.com/v3.1/all";
-      let Response = await fetch(Url);
-      let ResponseData = Response.json();
-      return ResponseData;
+      const url = "https://restcountries.com/v3.1/all";
+      const response = await fetch(url);
+      const responseData = response.json();
+      return responseData;
     } catch (error) {
       throw new Error(error);
     }
@@ -20,16 +20,15 @@ export default function AllCountries() {
   const [showFilterCountries, setshowFilterCountries] = useState(false);
   useEffect(() => {
     (async () => {
-      let countryData = await FetchCountriesData();
+      let countryData = await fetchCountriesData();
       let sliceData = countryData.slice(0, 20);
-
-      if (filterCountry == null) {
+      if (!filterCountry) {
         setapiData(sliceData);
       } else {
-        let FilterCountries = sliceData.filter((Value) => {
-          return Value.continents[0] === filterCountry;
+        let filterCountries = sliceData.filter((value) => {
+          return value.continents[0] === filterCountry;
         });
-        setapiData(FilterCountries);
+        setapiData(filterCountries);
       }
     })();
   }, [filterCountry]);
@@ -39,7 +38,7 @@ export default function AllCountries() {
         <div className="flex">
           {
             filterOptions.map((value)=>{
-              console.log(value)
+
               return(
               <span key={value.key}> <Filter prop1={value} setfilterCountry={setfilterCountry} setshowFilterCountries={setshowFilterCountries}/> </span>
             )})
@@ -49,10 +48,10 @@ export default function AllCountries() {
       <div className={`container sm:mt-5 sm:pl-1`}>
         <div className=" grid sm:grid-cols-3 sm:gap-y-20 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 ">
           {apiData.length > 0 ? (
-            apiData.map((Value, Index) => {
+            apiData.map((value, index) => {
               return (
-                <div key={Index}>
-                  <Card Data={Value} />
+                <div key={index}>
+                  <Card Data={value} />
                 </div>
               );
             })

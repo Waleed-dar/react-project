@@ -4,8 +4,8 @@ import {filterCountry} from "./AllCountries"
 
 export default function Filter({prop1, setfilterCountry, setshowFilterCountries}) {
     
-    const filterValue = (Value) => {
-        setfilterCountry(Value);
+    const filterValue = (value) => {
+        setfilterCountry(value);
        setshowFilterCountries(true);
       };
     
