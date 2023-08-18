@@ -40,7 +40,7 @@ export default function AllCountries() {
             filterOptions.map((value)=>{
 
               return(
-              <span key={value.key}> <Filter prop1={value} setfilterCountry={setfilterCountry} setshowFilterCountries={setshowFilterCountries}/> </span>
+              <span key={value.key}> <Filter filterOptions={value} setfilterCountry={setfilterCountry} setshowFilterCountries={setshowFilterCountries}/> </span>
             )})
           }
         </div>
