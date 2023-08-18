@@ -7,17 +7,17 @@ import Profile from "./Images/profile logo.png";
 import { SidebarItems } from "./ConstantData";
 
 export default function Sidebar() {
-  const [Sidebar, setSidebar] = useState(true);
+  const [sidebarWidth, setsidebarWidth] = useState(true);
   const [CurrentSelectedItem, setCurrentSelectedItem] = useState(null);
 
   const ToggleSidebar = () => {
-    setSidebar(!Sidebar);
+    setsidebarWidth(!sidebarWidth);
   };
   return (
     <div>
       <nav
-        className={`bg-gray-300 fixed h-full rounded-lg ${
-          Sidebar ? "w-36 sm:w-20 md:w-36 duration-500" : "w-20 duration-500"
+        className={`bg-gray-300 fixed h-full rounded-lg  ${
+          sidebarWidth ? " sm:w-24 md:w-28 lg:w-40 xl:w-48 2xl:w-56 duration-500" : "sm:w-20 md:w-24 lg:w-32 duration-500"
         }`}
       >
         <ul className="mt-2">
@@ -38,7 +38,7 @@ export default function Sidebar() {
             <button className="flex items-center">
               <img
                 className={`sm:h-4 sm:px-8 ${
-                  Sidebar ? "md:px-0 md:pl-2 " : "md:px-8"
+                  sidebarWidth ? "md:px-0 md:pl-2 " : "md:px-10"
                 }`}
                 src={HomeIcon}
                 alt="home image"
@@ -46,7 +46,7 @@ export default function Sidebar() {
 
               <div
                 className={`${
-                  Sidebar ? "block sm:hidden md:block md:pl-2" : "hidden"
+                  sidebarWidth ? "block sm:hidden md:block md:pl-2 xl:pl-7" : "hidden"
                 }`}
               >
                 All Countries
@@ -65,13 +65,13 @@ export default function Sidebar() {
             <button className="flex items-center">
               <img
                 className={`sm:h-4 sm:px-8 ${
-                  Sidebar ? " md:px-0 md:ml-1 md:pl-1" : "md:px-8"
+                  sidebarWidth ? " md:px-0 md:ml-1 md:pl-1" : "md:px-10"
                 } `}
                 src={Detail}
               />
               <div
                 className={`sm:hidden ${
-                  Sidebar ? "block md:block md:ml-2" : "hidden"
+                  sidebarWidth ? "block md:block md:ml-2 xl:pl-5" : "hidden"
                 }`}
               >
                 Country Details
@@ -89,15 +89,15 @@ export default function Sidebar() {
           >
             <button className="flex items-center">
               <img
-                className={`sm:h-7 sm:px-7 ${Sidebar ? "md:px-0" : "md:px-7"}`}
+                className={`sm:h-7 sm:px-7 ${sidebarWidth ? "md:px-0" : "md:px-9"}`}
                 src={Search}
               />
               <div
                 className={`sm:hidden ${
-                  Sidebar ? "md:block md:mr-2" : "hidden"
+                  sidebarWidth ? "md:block md:mr-2 xl:pl-6" : "hidden"
                 }`}
               >
-                FindNeighbours
+                Find Neighbours
               </div>
             </button>
           </li>
@@ -112,12 +112,12 @@ export default function Sidebar() {
           >
             <button className="flex items-center">
               <img
-                className={`sm:h-7 sm:px-7 ${Sidebar ? "md:px-0" : "md:px-7"}`}
+                className={`sm:h-7 sm:px-7 ${sidebarWidth ? "md:px-0" : "md:px-8"}`}
                 src={Profile}
               />
               <div
                 className={`sm:hidden ${
-                  Sidebar ? "md:block md:mr-2" : "hidden"
+                  sidebarWidth ? "md:block md:mr-2 xl:pl-6" : "hidden"
                 }`}
               >
                 Profile
