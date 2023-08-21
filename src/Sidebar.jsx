@@ -5,19 +5,20 @@ import Detail from "./Images/detail-icon.png";
 import BarOpener from "./Images/bar-opener.png";
 import Profile from "./Images/profile logo.png";
 import { SidebarItems } from "./ConstantData";
+import { Link } from "react-router-dom";
 
 export default function Sidebar() {
-  const [sidebarWidth, setsidebarWidth] = useState(true);
+  const [Sidebar, setSidebar] = useState(true);
   const [CurrentSelectedItem, setCurrentSelectedItem] = useState(null);
 
   const ToggleSidebar = () => {
-    setsidebarWidth(!sidebarWidth);
+    setSidebar(!Sidebar);
   };
   return (
     <div>
       <nav
-        className={`bg-gray-300 fixed h-full rounded-lg  ${
-          sidebarWidth ? " sm:w-24 md:w-28 lg:w-40 xl:w-48 2xl:w-56 duration-500" : "sm:w-20 md:w-24 lg:w-32 duration-500"
+        className={`bg-gray-300 fixed h-full rounded-lg ${
+          Sidebar ? "w-36 sm:w-20 md:w-36 duration-500" : "w-24 duration-500"
         }`}
       >
         <ul className="mt-2">
@@ -25,7 +26,7 @@ export default function Sidebar() {
             <img className="sm:h-5 hover:bg-slate-100" src={BarOpener} />
           </button>
           
-          <li
+          <Link to="/AllCountries"> <li
             className={` hover:bg-slate-100 rounded-md ${
               CurrentSelectedItem === SidebarItems.ALL_COUNTRIES
                 ? "bg-gray-100"
@@ -38,7 +39,7 @@ export default function Sidebar() {
             <button className="flex items-center">
               <img
                 className={`sm:h-4 sm:px-8 ${
-                  sidebarWidth ? "md:px-0 md:pl-2 " : "md:px-10"
+                  Sidebar ? "md:px-0 md:pl-2 " : "md:px-8"
                 }`}
                 src={HomeIcon}
                 alt="home image"
@@ -46,13 +47,13 @@ export default function Sidebar() {
 
               <div
                 className={`${
-                  sidebarWidth ? "block sm:hidden md:block md:pl-2 xl:pl-7" : "hidden"
+                  Sidebar ? "block sm:hidden md:block md:pl-2" : "hidden"
                 }`}
               >
-                All Countries
+               <link to="/AllCountries"></link> All Countries
               </div>
             </button>
-          </li>
+          </li></Link>
 
           <li
             className={`bg-gray-400  mt-2  hover:bg-slate-100 rounded-md } ${
@@ -65,13 +66,13 @@ export default function Sidebar() {
             <button className="flex items-center">
               <img
                 className={`sm:h-4 sm:px-8 ${
-                  sidebarWidth ? " md:px-0 md:ml-1 md:pl-1" : "md:px-10"
+                  Sidebar ? " md:px-0 md:ml-1 md:pl-1" : "md:px-8"
                 } `}
                 src={Detail}
               />
               <div
                 className={`sm:hidden ${
-                  sidebarWidth ? "block md:block md:ml-2 xl:pl-5" : "hidden"
+                  Sidebar ? "block md:block md:ml-2" : "hidden"
                 }`}
               >
                 Country Details
@@ -89,15 +90,15 @@ export default function Sidebar() {
           >
             <button className="flex items-center">
               <img
-                className={`sm:h-7 sm:px-7 ${sidebarWidth ? "md:px-0" : "md:px-9"}`}
+                className={`sm:h-7 sm:px-7 ${Sidebar ? "md:px-0" : "md:px-7"}`}
                 src={Search}
               />
               <div
                 className={`sm:hidden ${
-                  sidebarWidth ? "md:block md:mr-2 xl:pl-6" : "hidden"
+                  Sidebar ? "md:block md:mr-2" : "hidden"
                 }`}
               >
-                Find Neighbours
+                FindNeighbours
               </div>
             </button>
           </li>
@@ -112,12 +113,12 @@ export default function Sidebar() {
           >
             <button className="flex items-center">
               <img
-                className={`sm:h-7 sm:px-7 ${sidebarWidth ? "md:px-0" : "md:px-8"}`}
+                className={`sm:h-7 sm:px-7 ${Sidebar ? "md:px-0" : "md:px-7"}`}
                 src={Profile}
               />
               <div
                 className={`sm:hidden ${
-                  sidebarWidth ? "md:block md:mr-2 xl:pl-6" : "hidden"
+                  Sidebar ? "md:block md:mr-2" : "hidden"
                 }`}
               >
                 Profile

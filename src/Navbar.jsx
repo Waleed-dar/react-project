@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "./Images/logo.jpg";
+import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <div>
@@ -11,7 +12,7 @@ export default function Navbar() {
         />
         <ul className="text-white xs:space-x-3 xs:text-xs sm:space-x-5 md:space-x-6 lg:space-x-8 flex justify-end">
           <li className=" hover:text-gray-900">
-            <a href=""> Home</a>
+            <Link to="/">Home</Link> 
           </li>
           <li className=" hover:text-gray-900">
             <a href="">Services</a>
