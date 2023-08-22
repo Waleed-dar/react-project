@@ -45,13 +45,13 @@ export default function AllCountries() {
           }
         </div>
          </div>
-      <div className={`container sm:mt-5 sm:pl-1`}>
-        <div className=" grid sm:grid-cols-3 sm:gap-y-20 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 ">
+      <div className={`container sm:mt-5 sm:pl-1 lg:pl-0 `}>
+        <div className=" grid sm:grid-cols-3 sm:gap-y-20 sm:gap-x-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 ">
           {apiData.length > 0 ? (
             apiData.map((value, index) => {
               return (
                 <div key={index}>
-                  <Card Data={value} />
+                  <Card data={value} />
                 </div>
               );
             })
