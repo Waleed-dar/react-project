@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import { createRoot } from "react-dom/client";
 import CountryDetails from './CountryDetails';
+import FindNeighbours from './FindNeighbours';
 
 
 export default function Routing() {
@@ -21,6 +22,8 @@ export default function Routing() {
             <Route path="/" element={<div>Home page </div>} />
             <Route path="/AllCountries" element={<div className=''><AllCountries/></div>}/>
              <Route path='/AllCountries/:countryName' element={<div><CountryDetails/></div> }/>
+             <Route path='/FindNeighbours/:countryName' element={<div><CountryDetails/></div> }/>
+             <Route path='/FindNeighbours' element={<FindNeighbours />} />
          </Routes>
          </div>
          </div>

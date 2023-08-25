@@ -50,11 +50,12 @@ export default function Sidebar() {
                   Sidebar ? "block sm:hidden md:block md:pl-2" : "hidden"
                 }`}
               >
-               <link to="/AllCountries"></link> All Countries
+                 All Countries
               </div>
             </button>
           </li></Link>
 
+          
           <li
             className={`bg-gray-400  mt-2  hover:bg-slate-100 rounded-md } ${
               CurrentSelectedItem === SidebarItems.COUNTRY_DETAILS
@@ -80,6 +81,7 @@ export default function Sidebar() {
             </button>
           </li>
 
+          <Link to="/FindNeighbours">
           <li
             className={`bg-gray-400 mt-2  hover:bg-slate-100 rounded-md ${
               CurrentSelectedItem === SidebarItems.FIND_NEIGHBOURS
@@ -102,6 +104,7 @@ export default function Sidebar() {
               </div>
             </button>
           </li>
+          </Link>
 
           <li
             className={`bg-gray-400 mt-2  hover:bg-slate-100 rounded-md ${

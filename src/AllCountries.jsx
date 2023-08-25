@@ -9,7 +9,7 @@ export default function AllCountries() {
     try {
       const url = "https://restcountries.com/v3.1/all";
       const response = await fetch(url);
-      const responseData = response.json();
+      const responseData = await response.json();
       return responseData;
     } catch (error) {
       throw new Error(error);
