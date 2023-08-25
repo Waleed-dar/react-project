@@ -1,10 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 export default function Card({data}) {
+  const location = useLocation()
+  const pagePath = location.pathname.split("/").pop()
   return (
-    <div onClick={()=>{}} >
-      <Link to={`/AllCountries/${data.name.common}`}> 
+    <div>
+      <Link to={`/${pagePath}/${data.name.common}`}> 
       <div className="sm:w-36 sm:h-32">
         <div className=" border-solid border-2 border-black  sm:text-xs">
           <div className=" border-black  sm:h-auto sm:w-fit sm:text-sm ">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Route, useParams } from "react-router-dom";
 import backButton from "./Images/backbutton.png";
 export default function CountryDetails() {
   const { countryName } = useParams();
@@ -13,16 +13,17 @@ export default function CountryDetails() {
       const url = `https://restcountries.com/v3.1/name/${countryName}`;
       const response = await fetch(url);
       const data = await response.json();
+      console.log(data)
       return data;
     } catch (error) {
       throw new Error(error);
     }
   };
-
+  
   useEffect(() => {
     (async () => {
       setHandleState(true);
-      const countryDetail = await fetchCountryDetails();
+      let countryDetail = await fetchCountryDetails();
       setCountryDetails(countryDetail);
       let key = Object.keys(countryDetail[0].currencies);
       if (key.length > 1) {
@@ -36,7 +37,7 @@ export default function CountryDetails() {
   }, []);
   return (
     <div className="">
-      <Link to="/AllCountries">
+      <Link to={`${window.location.pathname.includes("/AllCountries") ? "/AllCountries" : "/FindNeighbours"}`}>
         <div className=" ml-0.5 mt-4 sm:h-10 sm:w-8">
           <img src={backButton} alt="backOption" />
         </div>{" "}
