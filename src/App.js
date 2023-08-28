@@ -1,15 +1,22 @@
-import AllCountries from './AllCountries';
-import './App.css';
-import Navbar from './Navbar';
 import Routing from './Routing';
-import Sidebar from './Sidebar';
+import { createContext, useContext } from 'react';
+import { useState } from 'react';
+import React from 'react';
 
-function App() {
+export const AuthContext =createContext();
+export const UserData=createContext();
+
+function App() {   
+  const [authentication, setAuthentication] = useState(localStorage.getItem("authentication"));
+  const [userInfo,setUserInfo]=useState(null);
   return (
-
-      <Routing />
-
-  );
+    <AuthContext.Provider value={{authentication,setAuthentication}}>
+      <UserData.Provider value={{userInfo,setUserInfo}}>
+       <Routing/>
+    </UserData.Provider>
+    </AuthContext.Provider>
+  )
+     
 }
 
 export default App;
