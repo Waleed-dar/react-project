@@ -1,7 +1,13 @@
 import React from "react";
 import logo from "./Images/logo.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserData } from "./App";
+import { useContext } from "react";
+import { AuthContext } from "./App";
 export default function Navbar() {
+  const {authentication , setAuthentication} = useContext(AuthContext);
+  const {userInfo}=useContext(UserData)
+  const navigate = useNavigate()
   return (
     <div>
       <nav className="bg-gray-600 sm:h-10 md:h-18 flex items-center justify-between px-4 sm:px-8 sticky">
@@ -21,10 +27,21 @@ export default function Navbar() {
             <a href="">Contact US</a>
           </li>
           <li className=" hover:text-gray-900">
-            <div className="w-7 h-5 bg-blue-300 rounded-full px-2  ">
-              <span className="">A</span>
+            <div onClick={()=>{
+              setAuthentication(false)
+              localStorage.clear()
+              navigate("/")
+              
+            }}>
+              SignOut
             </div>
           </li>
+          <li className=" hover:text-gray-900">
+            <div className="w-16 h-7 bg-blue-300 rounded-full px-2  ">
+              <span className="">{userInfo}</span>
+            </div>
+          </li>
+         
         </ul>
       </nav>
     </div>

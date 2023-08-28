@@ -106,6 +106,7 @@ export default function Sidebar() {
           </li>
           </Link>
 
+            <Link to="/Profile">
           <li
             className={`bg-gray-400 mt-2  hover:bg-slate-100 rounded-md ${
               CurrentSelectedItem === SidebarItems.PERSONAL_INFROMATION
@@ -127,7 +128,7 @@ export default function Sidebar() {
                 Profile
               </div>
             </button>
-          </li>
+          </li></Link>
         </ul>
       </nav>
     </div>
